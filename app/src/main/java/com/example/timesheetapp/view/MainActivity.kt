@@ -9,7 +9,6 @@ import com.example.timesheetapp.R
 import com.example.timesheetapp.view.adapters.ViewPager2Adapter
 import com.example.timesheetapp.view.screens.*
 import com.example.timesheetapp.viewmodel.MainActivityViewModel
-import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val viewPager2 = findViewById<ViewPager2>(R.id.view_pager2)
-        val monthText = findViewById<TextView>(R.id.textView2)
+        val monthText = findViewById<TextView>(R.id.monthText)
         val dotsIndicator = findViewById<WormDotsIndicator>(R.id.worm_dots_indicator)
 
 

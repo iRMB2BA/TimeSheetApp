@@ -7,16 +7,88 @@
     android:background="@color/backgroundColor"
     tools:context="view.MainActivity">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/view_pager2"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="128dp"
-        android:background="#F5F5F5"
-        android:clipToPadding="false"
+        android:layout_height="0dp"
+        android:background="@color/backgroundTop"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="80dp"
+            android:background="#B5B5B5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager2"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@color/backgroundTop"
+            android:clipToPadding="false"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <TextView
+            android:id="@+id/monthText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text=""
+            android:textColor="#333333"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Январь" />
+
+        <TextView
+            android:id="@+id/yearText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="2022"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/monthText" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_baseline_menu_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+            android:id="@+id/worm_dots_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            app:dotsColor="#404040"
+            app:dotsCornerRadius="8dp"
+            app:dotsSize="12dp"
+            app:dotsSpacing="4dp"
+            app:dotsStrokeColor="@color/black"
+            app:dotsStrokeWidth="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/textView"
@@ -26,31 +98,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_pager2" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="36dp"
-        android:text=""
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
-        android:id="@+id/worm_dots_indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:dotsColor="#292929"
-        app:dotsCornerRadius="8dp"
-        app:dotsSize="16dp"
-        app:dotsSpacing="4dp"
-        app:dotsStrokeColor="@color/black"
-        app:dotsStrokeWidth="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_pager2" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.53" />
 </androidx.constraintlayout.widget.ConstraintLayout>

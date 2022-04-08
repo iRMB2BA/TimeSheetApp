@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
     android:layout_width="360dp"
-    android:layout_height="250dp"
-    android:background="#F5F5F5"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
+    android:layout_height="230dp"
+    android:background="@color/backgroundTop"
+    android:padding="10dp"
     tools:context=".view.screens.JanuaryFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/layout_bg"
+        android:backgroundTint="#EEEEEF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
